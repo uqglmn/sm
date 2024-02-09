@@ -1,9 +1,9 @@
 # regression diagnotics plot 
 
-regression_diagnostics <- function(x,y) {
+regression_diagnostics <- function(x, y, scale=1) {
 
     # set the display size
-    options(repr.plot.width=12, repr.plot.height=6)
+    options(repr.plot.width=12*scale, repr.plot.height=6*scale)
     par(mfrow = c(2,4), mar=c(4,4,3,2))
 
     model = lm(y~x)           # fit a straight-line model
