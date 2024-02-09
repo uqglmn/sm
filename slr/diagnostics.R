@@ -4,7 +4,7 @@ regression_diagnostics <- function(x, y, scale=1) {
 
     # set the display size
     options(repr.plot.width=12*scale, repr.plot.height=6*scale)
-    par(mfrow = c(2,4), mar=c(4*scale,4.1*scale,3,2))
+    par(mfrow = c(2,4), mar=c(4.2*scale,4.2*scale,3,2))
 
     model = lm(y~x)           # fit a straight-line model
     haty  = fitted(model)     # get fitted values, hat-y
