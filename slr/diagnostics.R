@@ -14,13 +14,13 @@ regression_diagnostics <- function(x, y, scale=1) {
     
     # Regression model plot - 
     plot(y~x, main="Straight-line model", font.main=1, cex.lab=1.5*scale, 
-         cex.axis=1.5*scale, cex.main=1.5*scale, cex.sub=1.5*scale)  # adjust the main title
+         cex.axis=1.5*scale, cex.main=1.5*scale, cex.sub=1.5*scale)  # plot
     abline(model, col=2)                                             # add a fitted regression line
 
     # Constance of variance: r vs x
     plot(r~x, ylab="Std residuals", 
          main="Std residuals vs x", font.main=1, cex.lab=1.5*scale, 
-         cex.axis=1.5*scale, cex.main=1.5*scale, cex.sub=1.5*scale)  # adjust the main title
+         cex.axis=1.5*scale, cex.main=1.5*scale, cex.sub=1.5*scale)  # plot
     abline(h=0, lty=3, col=8)
     # the next two lines add a trend-line to the plot - loess fit - locally estimated scatterplot smoothing
     new.x = seq(min(x), max(x), length.out=20)
@@ -37,11 +37,12 @@ regression_diagnostics <- function(x, y, scale=1) {
 
     # histogram of r
     hist(r, main="Std residuals", font.main=1, cex.lab=1.5*scale, 
-         cex.axis=1.5*scale, cex.main=1.5*scale, cex.sub=1.5*scale)  # adjust the main title
+         cex.axis=1.5*scale, cex.main=1.5*scale, cex.sub=1.5*scale)  # plot
     
     # second row plots:
 
     # built-in statistical plots
-    plot(model)
+    plot(model, font.main=1, cex.lab=1.5*scale, 
+         cex.axis=1.5*scale, cex.main=1.5*scale, cex.sub=1.5*scale)  # plot
     
 }
